@@ -10,12 +10,13 @@ echo.
 echo Trying to find your Qobuz folder...
 FOR /F "usebackq delims=" %%p IN (`dir "C:\Users\%username%\AppData\Local\Qobuz" /b /ad ^| find "app-5"`) DO (
   set "QBPATH=%%p"
-  set "QDTVER=app-5.4.3-b006"
+  set "QDTVER=app-5.4.4-b016"
 )
+
+if "%QBPATH%"=="app-5.4.4-b016" (
 echo.
 echo Found %QBPATH%!
 echo.
-if "%QBPATH%"=="app-5.4.3-b006" (
 echo Version supported!
 set "URL=https://raw.githubusercontent.com/Evo-c/qobuz-dark-theme/master/style.css"
 goto Update
